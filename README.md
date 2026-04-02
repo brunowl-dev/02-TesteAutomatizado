@@ -421,10 +421,14 @@ npx playwright show-report
 
 O Codegen é uma ferramenta que grava as interações do usuário no navegador e gera código de teste automaticamente. É um excelente ponto de partida para iniciantes.
 
+Utilizaremos a opção `--output` para que o Codegen salve o código gerado diretamente em um arquivo, sem necessidade de copiar e colar manualmente:
+
 ```bash
 # Substitua <seu-usuario> pelo seu nome de usuário do GitHub
-npx playwright codegen https://<seu-usuario>.github.io/02-TesteAutomatizado/
+npx playwright codegen --output tests/qs-academico-codegen.spec.ts https://<seu-usuario>.github.io/02-TesteAutomatizado/
 ```
+
+> **💡 Dica:** A opção `--output` faz com que, ao fechar a janela do Codegen, o código gravado seja salvo automaticamente no arquivo especificado. Se o arquivo já existir, ele será sobrescrito.
 
 **Tarefa:** Com o Codegen aberto, o aluno deve realizar as seguintes ações no site QS Acadêmico:
 
@@ -434,8 +438,7 @@ npx playwright codegen https://<seu-usuario>.github.io/02-TesteAutomatizado/
 4. Limpar o filtro e excluir o segundo aluno.
 
 Ao finalizar, o aluno deve:
-- Copiar o código gerado pelo Codegen.
-- Salvá-lo em `tests/qs-academico-codegen.spec.ts`. (*este arquivo não existe, você vai criá-lo*)
+- Fechar a janela do Codegen. O arquivo `tests/qs-academico-codegen.spec.ts` será criado automaticamente com o código gravado.
 - Executar o teste para confirmar que funciona: `npx playwright test qs-academico-codegen --headed`
 
 **Reflexão:** *Observe o código gerado. Que tipo de seletores o Codegen utilizou? São os mais indicados?*
